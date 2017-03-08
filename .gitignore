@@ -3,3 +3,11 @@
 ################################################################################
 
 /packages
+/SoonFramework.Configuration/bin
+/SoonFramework.Configuration/obj
+/SoonFramework.Core/bin
+/SoonFramework.Core/obj
+/SoonFramework.Data/bin
+/SoonFramework.Data/obj
+/SoonFramework.Service/bin
+/SoonFramework.Service/obj

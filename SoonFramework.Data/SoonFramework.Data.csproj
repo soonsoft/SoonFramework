@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3AEF00E9-CDB1-45A8-992C-28707A21FE39}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoonFramework.Data</RootNamespace>
+    <AssemblyName>SoonFramework.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\SoonFramework.Data.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CachingMechanism.cs" />
+    <Compile Include="CommandTextFormatException.cs" />
+    <Compile Include="CommandTextTransformer.cs" />
+    <Compile Include="DatabaseAccess.cs" />
+    <Compile Include="DatabaseAccess.v45.cs" />
+    <Compile Include="DatabaseAccessFactory.cs" />
+    <Compile Include="DbConnectionWrapper.cs" />
+    <Compile Include="DbContextExtensions.cs" />
+    <Compile Include="DbDataReaderExtensions.cs" />
+    <Compile Include="DbEntityValidationExceptionExtension.cs" />
+    <Compile Include="DbTransactionException.cs" />
+    <Compile Include="DbTransactionScope.cs" />
+    <Compile Include="DbTransactionWrapper.cs" />
+    <Compile Include="DatabaseAccessCreator.cs" />
+    <Compile Include="IgnoreAttribute.cs" />
+    <Compile Include="ITransactionManager.cs" />
+    <Compile Include="LocalTransaction.cs" />
+    <Compile Include="MySQL\MySqlDatabaseAccess.cs" />
+    <Compile Include="OleDb\OleDatabaseAccess.cs" />
+    <Compile Include="Oracle\OracleDatabaseAccess.cs" />
+    <Compile Include="PagingCommandTextCache.cs" />
+    <Compile Include="PagingResult.cs" />
+    <Compile Include="ParameterCache.cs" />
+    <Compile Include="PostgreSQL\PostgreSQLDatabaseAccess.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryParameterUtility.cs" />
+    <Compile Include="SQLite\SQLiteDatabaseAccess.cs" />
+    <Compile Include="SQLServer\SqlDatabaseAccessOld.cs" />
+    <Compile Include="SQLServer\SqlDatabaseAccess.cs" />
+    <Compile Include="TransactionConnectionWrapper.cs" />
+    <Compile Include="TransactionManager.cs" />
+    <Compile Include="UniversallyParameterCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UpdateBehavior.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SoonFramework.Core\SoonFramework.Core.csproj">
+      <Project>{4a54fd55-6feb-4488-91a2-8d411e35bb60}</Project>
+      <Name>SoonFramework.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
