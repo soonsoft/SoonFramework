@@ -18,5 +18,14 @@ Asp.Net MVC5 工具模块
 Web系统主题支持
 ### SoonFramework.Personalize
 个性化
-
+### SoonFramework.Service
+业务逻辑规范定义
+### SoonFramework.BusinessLogic.Organization
+业务系统组织机构管理
+### SoonFramework.BusinessLogic.Flow
+业务系统简单电子流审批
+### SoonFramework.BusinessLogic.Settings
+业务系统逻辑设置信息处理
+### SoonFramework.BusinessLogic.Dictionary
+业务系统字典信息管理
 ###待续...
